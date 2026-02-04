@@ -3,6 +3,7 @@ package com.ll.wiseSaying.service;
 import com.ll.wiseSaying.entity.WiseSaying;
 import com.ll.wiseSaying.repository.WiseSayingRepository;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +33,14 @@ public class WiseSayingService {
     public int findIndexById(int id) {
         return wiseSayingRepository.findIndexById(id);
     }
+    public WiseSaying findById(int id) {
+        return wiseSayingRepository.findByID(id);
+    }
 
     public WiseSaying write(String content, String author) {
         WiseSaying wiseSaying = new WiseSaying(lastId, content, author);
+        wiseSaying.setCreateDate(LocalDateTime.now());
+        wiseSaying.setModifyDate(LocalDateTime.now());
         return wiseSayingRepository.save(wiseSaying);
     }
 

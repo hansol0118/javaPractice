@@ -23,9 +23,9 @@ public class App {
 
             } else if (action.equals("목록")) {
                 wiseSayingController.actionList();
-            } else if (action.startsWith("수정?id=")) {
+            } else if (action.equals("수정")) {
                 wiseSayingController.actionModify(rq);
-            } else if (action.startsWith("삭제?id=")) {
+            } else if (action.equals("삭제")) {
                 wiseSayingController.actionDelete(rq);
 
             } else if (cmd.equals("종료")) {

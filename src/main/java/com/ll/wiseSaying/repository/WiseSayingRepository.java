@@ -2,6 +2,7 @@ package com.ll.wiseSaying.repository;
 
 import com.ll.wiseSaying.entity.WiseSaying;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -39,7 +40,6 @@ public class WiseSayingRepository {
     }
 
     public  boolean delete(int id) {
-
         return ws.removeIf((wiseSaying) -> wiseSaying.getId() == id);
     }
 
@@ -47,8 +47,11 @@ public class WiseSayingRepository {
         //저장
         if(wiseSaying.getId() == 0) {
             wiseSaying.setId(++lastId);
+            wiseSaying.setModifyDate(LocalDateTime.now());
+            wiseSaying.setCreateDate(LocalDateTime.now());
             ws.add(wiseSaying);
         }
+        else wiseSaying.setModifyDate(LocalDateTime.now());
         // 수정 필요하면 추가
         return wiseSaying;
     }

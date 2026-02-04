@@ -17,7 +17,7 @@ public class Rq {
         String params = cmdBits.length > 1 ? cmdBits[1] : "";
         String [] paramsBits = params.split("&");
 
-        Arrays.stream(paramsBits)
+        paramMap = Arrays.stream(paramsBits)
                 .map((param)-> param.split("="))
                 .filter((String [] paramBits)-> paramBits.length == 2 && paramBits[0] != null && paramBits[1] != null)
                 .collect(Collectors.toMap(

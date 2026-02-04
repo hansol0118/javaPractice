@@ -8,7 +8,7 @@ public class Main {
     }
 }
 
-//import java.util.Scanner;
+//import java.util.Scanner;a
 //
 //public class com.ll.wiseSaying.Main {
 //    public static void main(String[] args) {

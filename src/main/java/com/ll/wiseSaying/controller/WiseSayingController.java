@@ -4,6 +4,7 @@ import com.ll.Rq;
 import com.ll.wiseSaying.entity.WiseSaying;
 import com.ll.wiseSaying.service.WiseSayingService;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -37,7 +38,7 @@ public class WiseSayingController {
             return;
         }
 
-        WiseSaying wiseSaying = wiseSayingService.findByID(id);
+        WiseSaying wiseSaying = wiseSayingService.findById(id);
         if (wiseSaying == null) {
             System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
         }
@@ -57,11 +58,14 @@ public class WiseSayingController {
 
 
     public void actionList() {
-        System.out.println("번호 / 작가 / 명언");
+        System.out.println("번호 / 작가 / 명언 / 작성일 / 수정일");
         System.out.println("----------------------");
         List<WiseSaying> wiseSayingList = wiseSayingService.findList();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 H시 mm분 ss초");
+
         for (WiseSaying wiseSaying : wiseSayingList) {
-            System.out.printf("%d / %s / %s\n", wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent());
+            System.out.printf("%d / %s / %s %s %s\n", wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent(), wiseSaying.getCreateDate(), wiseSaying.getModifyDate());
+
         }
     }
 
