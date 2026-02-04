@@ -43,10 +43,13 @@ public class WiseSayingRepository {
         return ws.removeIf((wiseSaying) -> wiseSaying.getId() == id);
     }
 
-    public WiseSaying save (String content, String author){
-        WiseSaying wiseSaying = new WiseSaying(++lastId, content, author);
-        ws.add(wiseSaying);
-
+    public WiseSaying save (WiseSaying wiseSaying){
+        //저장
+        if(wiseSaying.getId() == 0) {
+            wiseSaying.setId(++lastId);
+            ws.add(wiseSaying);
+        }
+        // 수정 필요하면 추가
         return wiseSaying;
     }
 }

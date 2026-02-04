@@ -34,16 +34,15 @@ public class WiseSayingService {
     }
 
     public WiseSaying write(String content, String author) {
-
-        WiseSaying wiseSaying = new WiseSaying(++lastId, content, author);
-        ws.add(wiseSaying);
-
-        return wiseSaying;
+        WiseSaying wiseSaying = new WiseSaying(lastId, content, author);
+        return wiseSayingRepository.save(wiseSaying);
     }
 
     public void modify(WiseSaying wiseSaying, String content, String author) {
         wiseSaying.setAuthor(author);
         wiseSaying.setContent(content);
+
+        wiseSayingRepository.save(wiseSaying);
     }
 
     public boolean delete(int delTarget) {
