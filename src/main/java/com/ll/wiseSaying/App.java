@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ public class App {
     private Scanner sc = new Scanner(System.in);
     private List<WiseSaying> ws = new ArrayList<>();
     private int lastId = 0;
-
+    private SystemController systemController = new SystemController();
     public void run() {
 
         System.out.println("== 명령 앱 ==");
@@ -28,6 +30,7 @@ public class App {
                 actionDelete(rq);
 
             } else if (cmd.equals("종료")) {
+                systemController.exit();
                 break;
             } else System.out.println("다시 입력해주세요");
         }
@@ -118,7 +121,7 @@ public class App {
         List<WiseSaying> foundedWiseSayingList = new ArrayList<>();
 
 //        for (int i = ws.size() - 1; i >= 0; i--) {
-//            WiseSaying foundedWiseSaying = ws.get(i);
+//            com.ll.wiseSaying.WiseSaying foundedWiseSaying = ws.get(i);
 //            foundedWiseSayingList.add(foundedWiseSaying);
 //        }
         for (WiseSaying wiseSaying : ws.reversed()) {

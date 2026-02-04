@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 public class WiseSaying {
     int id;
     String content;

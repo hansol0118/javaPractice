@@ -1,3 +1,5 @@
+package com.ll.wiseSaying;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,7 +10,7 @@ public class Main {
 
 //import java.util.Scanner;
 //
-//public class Main {
+//public class com.ll.wiseSaying.Main {
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 //        wise [] ws = new wise[100];
