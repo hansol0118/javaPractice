@@ -1,4 +1,4 @@
-package com.ll.wiseSaying;
+package com.ll.wiseSaying.entity;
 
 public class WiseSaying {
     int id;
@@ -11,7 +11,7 @@ public class WiseSaying {
         this.author = "NULL";
     }
 
-    WiseSaying(int id, String content, String author){
+    public WiseSaying(int id, String content, String author){
         this.id=id;
         this.content=content;
         this.author=author;
