@@ -1,5 +1,7 @@
 package com.ll;
 
+import com.ll.global.AppContext;
+import com.ll.global.Rq;
 import com.ll.system.controller.SystemController;
 import com.ll.wiseSaying.controller.WiseSayingController;
 
@@ -7,8 +9,8 @@ import java.util.Scanner;
 
 public class App {
     private Scanner sc = new Scanner(System.in);
-    private SystemController systemController = new SystemController();
-    private WiseSayingController wiseSayingController = new WiseSayingController();
+    private SystemController systemController = AppContext.systemController;
+    private WiseSayingController wiseSayingController = AppContext.wiseSayingController;
     public void run() {
 
         System.out.println("== 명령 앱 ==");

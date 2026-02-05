@@ -1,6 +1,6 @@
 package com.ll.wiseSaying.controller;
 
-import com.ll.Rq;
+import com.ll.global.Rq;
 import com.ll.wiseSaying.entity.WiseSaying;
 import com.ll.wiseSaying.service.WiseSayingService;
 

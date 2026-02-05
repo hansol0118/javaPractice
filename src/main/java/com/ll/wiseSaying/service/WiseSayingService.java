@@ -1,5 +1,6 @@
 package com.ll.wiseSaying.service;
 
+import com.ll.global.AppContext;
 import com.ll.wiseSaying.entity.WiseSaying;
 import com.ll.wiseSaying.repository.WiseSayingRepository;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class WiseSayingService {
     private List<WiseSaying> ws = new ArrayList<>();
-    WiseSayingRepository wiseSayingRepository = new WiseSayingRepository();
+    WiseSayingRepository wiseSayingRepository = AppContext.wiseSayingRepository;
     private int lastId = 0;
 
 
