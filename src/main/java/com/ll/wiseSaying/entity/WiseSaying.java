@@ -1,8 +1,13 @@
 package com.ll.wiseSaying.entity;
 
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDateTime;
+@Setter
+@Getter
 public class WiseSaying {
+
     private int id;
     private String content;
     private String author;
